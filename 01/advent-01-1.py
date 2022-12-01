@@ -1,22 +1,26 @@
 import sys
 
 
+# Input is calories of snacks carried by elves
+# grouped by elves, with empty line as delimiter
+# Find the maximum amount of calories any elf is carrying
 def main():
-    if (len(sys.argv) < 2):
+    if len(sys.argv) < 2:
         print ("Usage: advent-01-1.py <inptfile>")
         sys.exit(1)
     filename = sys.argv[1]
-    print("Reading input from " + filename)
-    elf = list()
-    calories = 0
+
     with open(filename) as file:
+        elf = [0]
         for line in file:
-            if len(line.strip()) == 0:
-                elf.append(calories)
-                calories = 0
+            if len(line.strip()) != 0:
+                # Add calories to this elf
+                elf[-1] += int(line)
             else:
-                calories += int(line)
-        elf.append(calories)
+                # Empty line -> new elf
+                elf.append(0)
+
+    # Print result
     print(max(elf))
 
 
