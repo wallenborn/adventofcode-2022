@@ -11,18 +11,19 @@ def main():
     filename = sys.argv[1]
 
     with open(filename) as file:
+        # Initialize one elf
         elf = [0]
         for line in file:
-            if len(line.strip()) != 0:
-                # Add calories to this elf
-                elf[-1] += int(line)
-            else:
+            if line.isspace():
                 # Empty line -> new elf
                 elf.append(0)
+            else:
+                # Add calories to this elf
+                elf[-1] += int(line)
 
     # Print result
-    elf.sort(reverse=True)
-    print(sum(elf[:3]))
+    elf.sort()
+    print(sum(elf[-3:]))
 
 
 if __name__ == '__main__':
