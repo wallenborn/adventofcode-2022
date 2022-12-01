@@ -3,7 +3,7 @@ import sys
 
 # Input is calories of snacks carried by elves
 # grouped by elves, with empty line as delimiter
-# Find the sum of the 3 hightest calory amounts
+# Find the sum of the 3 highest amounts of any elf
 def main():
     if len(sys.argv) < 2:
         print("Usage: advent-01-2.py <inptfile>")
