@@ -6,7 +6,7 @@ import sys
 # Find the sum of the 3 highest amounts of any elf
 def main():
     if len(sys.argv) < 2:
-        print("Usage: advent-01-2.py <inptfile>")
+        print("Usage: advent-01-2.py <inputfile>")
         sys.exit(1)
     filename = sys.argv[1]
 

@@ -9,9 +9,10 @@ pts = {'A X': 4, 'A Y': 8, 'A Z': 3,
        'B X': 1, 'B Y': 5, 'B Z': 9,
        'C X': 7, 'C Y': 2, 'C Z': 6}
 
+
 def main():
     if len(sys.argv) < 2:
-        print("Usage: advent-02-1.py <inptfile>")
+        print("Usage: advent-02-1.py <inputfile>")
         sys.exit(1)
     filename = sys.argv[1]
     with open(filename) as file:

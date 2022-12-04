@@ -6,7 +6,7 @@ import sys
 # Find the maximum amount of calories any elf is carrying
 def main():
     if len(sys.argv) < 2:
-        print ("Usage: advent-01-1.py <inptfile>")
+        print ("Usage: advent-01-1.py <inputfile>")
         sys.exit(1)
     filename = sys.argv[1]
 
