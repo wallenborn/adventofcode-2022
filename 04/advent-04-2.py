@@ -14,7 +14,7 @@ def main():
             [left_str, right_str] = line.rstrip().split(',')
             left = list(map(lambda s: int(s), left_str.split('-')))
             right = list(map(lambda s: int(s), right_str.split('-')))
-            if overlaps(left, right) or overlaps(right, left):
+            if overlaps(left, right):
                 result += 1
         print(result)
 
