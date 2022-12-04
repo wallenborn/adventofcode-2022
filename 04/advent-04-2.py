@@ -20,7 +20,7 @@ def main():
 
 
 def overlaps(left, right):
-    return not (max(left) < min(right) or min(left) > max(right))
+    return not (max(left) < min(right) or max(right) < min(left))
 
 
 if __name__ == '__main__':
