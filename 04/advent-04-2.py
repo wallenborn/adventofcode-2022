@@ -1,6 +1,7 @@
 import sys
 
-
+# Elves are assigned ranges, input is ranges for an elf pair
+# Find the number of elf pairs where the ranges overlap
 def main():
     if len(sys.argv) < 2:
         print ("Usage: advent-04-1.py <inputfile>")
@@ -11,16 +12,15 @@ def main():
         result = 0
         for line in file:
             [left_str, right_str] = line.rstrip().split(',')
-            left = left_str.split('-')
-            right = right_str.split('-')
+            left = list(map(lambda s: int(s), left_str.split('-')))
+            right = list(map(lambda s: int(s), right_str.split('-')))
             if overlaps(left, right) or overlaps(right, left):
                 result += 1
         print(result)
 
 
 def overlaps(left, right):
-    return (int(left[0]) <= int(right[0]) <= int(left[1])) \
-        or (int(left[0]) <= int(right[1]) <= int(left[1]))
+    return not (max(left) < min(right) or min(left) > max(right))
 
 
 if __name__ == '__main__':
