@@ -30,12 +30,10 @@ def main():
     base = 1
     for m in monkeys:
         base *= m.base
-    print("Base is %d" % base)
     for m in monkeys:
         m.base = base
 
     for i in range(10000):
-        print("Round %d" % i)
         for m in monkeys:
             items = m.items
             m.items = list()
@@ -45,7 +43,6 @@ def main():
                 monkeys[m.throw_to(x)].items.append(x)
 
     inspections = sorted(list(map(lambda m: m.num_inspections, monkeys)), reverse=True)
-    print(inspections)
     print(inspections[0] * inspections[1])
 
 
